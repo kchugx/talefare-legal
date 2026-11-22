@@ -11,8 +11,27 @@
 <meta property="og:title" content="Talefare">
 <meta property="og:description" content="One library for the books, movies, shows and audio you love.">
 <meta property="og:url" content="https://talefare.com/">
+<meta property="og:site_name" content="Talefare">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://talefare.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Talefare: everything you read, watch and listen to, in one place.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Talefare: your books, movies, shows and audio in one place">
+<meta name="twitter:description" content="One library for the books, movies, shows and audio you love. Track progress, see where to watch, and find what to enjoy next.">
+<meta name="twitter:image" content="https://talefare.com/og-image.png">
+<meta name="twitter:image:alt" content="Talefare: everything you read, watch and listen to, in one place.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://talefare.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="landing.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebSite","@id":"https://talefare.com/#site","url":"https://talefare.com/","name":"Talefare","description":"One library for the books, movies, shows and audio you love."},
+  {"@type":"WebApplication","@id":"https://talefare.com/#app","name":"Talefare","url":"https://app.talefare.com/","description":"Track the books, movies, shows and audio you want to enjoy, are enjoying, or have finished, with progress, where to watch, and recommendations.","applicationCategory":"LifestyleApplication","browserRequirements":"Requires JavaScript. Works in Safari, Chrome and Edge."}
+]}
+</script>
 </head>
 <body>
 
@@ -39,9 +58,9 @@
       <p class="lede">Talefare keeps your books, movies, shows and audio together. See where you left off, where to watch, and what to enjoy next.</p>
       <div class="cta-row">
         <a class="btn" href="https://app.talefare.com">Try it in your browser</a>
-        <a class="btn btn-ghost" href="mailto:hello@talefare.com?subject=Talefare%20phone%20beta">Request a phone invite</a>
+        <a class="btn btn-ghost" href="#join" data-kind="invite">Request a phone invite</a>
       </div>
-      <p class="fineprint">Works in Safari, Chrome and Edge on your iPhone, iPad or computer. The phone apps are in private beta: write to <a href="mailto:hello@talefare.com?subject=Talefare%20phone%20beta">hello@talefare.com</a> to ask for an invite.</p>
+      <p class="fineprint">Works in Safari, Chrome and Edge on your iPhone, iPad or computer. The phone apps are in private beta: <a href="#join" data-kind="invite">ask for an invite</a>.</p>
     </div>
 
     <div class="hero-art" aria-hidden="true">
@@ -142,13 +161,51 @@
     </div>
   </section>
 
-  <section class="closing wrap">
+  <section class="closing wrap" id="join">
     <h2>Be one of the first to try it</h2>
-    <p>Talefare is in private beta and still changing every week. Your feedback shapes what comes next.</p>
+    <p>Talefare is in private beta and still changing every week. Try the web app now, ask for a phone invite, or tell us what you think. Your feedback shapes what comes next.</p>
     <div class="cta-row center">
       <a class="btn" href="https://app.talefare.com">Open the web app</a>
-      <a class="btn btn-ghost" href="mailto:hello@talefare.com?subject=Talefare%20feedback">Send feedback</a>
     </div>
+
+    <form class="join" id="join-form" novalidate>
+      <h3>Ask for a phone invite or send feedback</h3>
+
+      <fieldset class="kind-pick">
+        <legend class="sr-only">What is this about?</legend>
+        <label class="pill"><input type="radio" name="kind" value="invite" checked> <span>Phone invite</span></label>
+        <label class="pill"><input type="radio" name="kind" value="feedback"> <span>Feedback</span></label>
+      </fieldset>
+
+      <div class="field">
+        <label for="join-email" id="join-email-label">Email (we will send your invite here)</label>
+        <input id="join-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field" id="join-device-field">
+        <label for="join-device">Which phone do you use?</label>
+        <select id="join-device" name="device">
+          <option value="iphone">iPhone</option>
+          <option value="android">Android</option>
+          <option value="either" selected>Either / not sure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="join-message" id="join-message-label">Anything we should know? (optional)</label>
+        <textarea id="join-message" name="message" rows="4" maxlength="2000"></textarea>
+      </div>
+
+      <!-- Honeypot: real visitors never see this. Bots that fill every field give themselves away. -->
+      <div class="hp" aria-hidden="true">
+        <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <button class="btn" type="submit" id="join-submit">Send</button>
+      <p class="form-status" id="join-status" role="status" aria-live="polite"></p>
+      <noscript><p class="form-status">The form needs JavaScript. You can also write to <a href="mailto:hello@talefare.com">hello@talefare.com</a>.</p></noscript>
+      <p class="fineprint">We use your email only to reply about this. See the <a href="privacy.html">privacy policy</a>. Prefer email? Write to <a href="mailto:hello@talefare.com">hello@talefare.com</a>.</p>
+    </form>
   </section>
 
 </main>
@@ -171,6 +228,99 @@
     <p class="copy">&copy; Talefare</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var ENDPOINT = 'https://wiinzjkpcktcqzgjhuke.supabase.co/functions/v1/landing-form';
+  var form = document.getElementById('join-form');
+  if (!form) return;
+  var email = document.getElementById('join-email');
+  var message = document.getElementById('join-message');
+  var emailLabel = document.getElementById('join-email-label');
+  var messageLabel = document.getElementById('join-message-label');
+  var deviceField = document.getElementById('join-device-field');
+  var status = document.getElementById('join-status');
+  var button = document.getElementById('join-submit');
+  var sending = false;
+
+  function currentKind() { return form.querySelector('input[name="kind"]:checked').value; }
+
+  function setKind(kind) {
+    var radio = form.querySelector('input[name="kind"][value="' + kind + '"]');
+    if (radio) radio.checked = true;
+    var invite = kind === 'invite';
+    deviceField.hidden = !invite;
+    email.required = invite;
+    message.required = !invite;
+    emailLabel.textContent = invite ? 'Email (we will send your invite here)' : 'Email (optional, only if you want a reply)';
+    messageLabel.textContent = invite ? 'Anything we should know? (optional)' : 'Your feedback';
+    status.textContent = '';
+    status.className = 'form-status';
+  }
+
+  function say(text, isError) {
+    status.textContent = text;
+    status.className = 'form-status ' + (isError ? 'is-error' : 'is-ok');
+  }
+
+  Array.prototype.forEach.call(form.querySelectorAll('input[name="kind"]'), function (r) {
+    r.addEventListener('change', function () { setKind(currentKind()); });
+  });
+
+  // Buttons elsewhere on the page ("Request a phone invite") pick the right tab, then scroll here.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-kind]'), function (el) {
+    el.addEventListener('click', function () {
+      setKind(el.getAttribute('data-kind'));
+      setTimeout(function () { (currentKind() === 'invite' ? email : message).focus({ preventScroll: true }); }, 400);
+    });
+  });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (sending) return;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var kind = currentKind();
+    var payload = {
+      kind: kind,
+      email: email.value.trim(),
+      device: kind === 'invite' ? form.elements.device.value : '',
+      message: message.value.trim(),
+      website: form.elements.website.value
+    };
+
+    sending = true;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) { return { ok: res.ok, body: body }; });
+      })
+      .then(function (result) {
+        if (result.ok) {
+          say(kind === 'invite' ? "Thank you, you're on the list. We'll write to that address when your invite is ready." : 'Thank you. Your feedback was sent.', false);
+          email.value = '';
+          message.value = '';
+        } else {
+          say((result.body && result.body.error) || 'Something went wrong. Please try again, or email hello@talefare.com.', true);
+        }
+      })
+      .catch(function () {
+        say('We could not send that. Please check your connection, or email hello@talefare.com.', true);
+      })
+      .then(function () {
+        sending = false;
+        button.disabled = false;
+        button.textContent = 'Send';
+      });
+  });
+
+  setKind('invite');
+})();
+</script>
 
 </body>
 </html>
