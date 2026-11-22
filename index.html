@@ -3,34 +3,174 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Talefare</title>
-<link rel="stylesheet" href="style.css">
+<title>Talefare: your books, movies, shows and audio in one place</title>
+<meta name="description" content="Talefare keeps the books, movies, shows and audio you want to enjoy, are enjoying, or have finished in one library, with progress, where to watch, and what to try next.">
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141412" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talefare">
+<meta property="og:description" content="One library for the books, movies, shows and audio you love.">
+<meta property="og:url" content="https://talefare.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Talefare home">
+      <svg class="mark" viewBox="0 0 120 140" fill="currentColor" aria-hidden="true"><path d="M14 125 L14 52 A46 46 0 0 1 106 52 L106 125 L96 125 L96 52 A36 36 0 0 0 24 52 L24 125 Z"/><path d="M27 125 L27 52 A33 33 0 0 1 93 52 L93 125 L90 125 L90 52 A30 30 0 0 0 30 52 L30 125 Z"/><path d="M35 125 L35 52 A25 25 0 0 1 85 52 L85 125 L82 125 L82 52 A22 22 0 0 0 38 52 L38 125 Z"/><path d="M42 125 L42 52 A18 18 0 0 1 78 52 L78 125 L76 125 L76 52 A16 16 0 0 0 44 52 L44 125 Z"/><path d="M60 65 L61.6 70.4 L67 72 L61.6 73.6 L60 79 L58.4 73.6 L53 72 L58.4 70.4 Z"/><rect x="52" y="105" width="16" height="2.4"/><rect x="50" y="112" width="20" height="2.4"/><rect x="48" y="119" width="24" height="2.4"/></svg>
+      <span>Talefare</span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#private">Privacy</a>
+      <a class="btn btn-small" href="https://app.talefare.com">Open the app</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<nav><a href="index.html">Talefare</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
 
-<h1>Talefare</h1>
-<p>One place to keep track of the books, movies, shows and audio you want to enjoy, are enjoying, or have finished.</p>
-<p class="muted">Talefare is currently in private beta testing.</p>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Private beta</p>
+      <h1>Everything you read, watch and listen to, in one place.</h1>
+      <p class="lede">Talefare keeps your books, movies, shows and audio together. See where you left off, where to watch, and what to enjoy next.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://app.talefare.com">Try it in your browser</a>
+        <a class="btn btn-ghost" href="mailto:hello@talefare.com?subject=Talefare%20phone%20beta">Request a phone invite</a>
+      </div>
+      <p class="fineprint">The phone apps are in private beta. Write to <a href="mailto:hello@talefare.com?subject=Talefare%20phone%20beta">hello@talefare.com</a> to ask for an invite.</p>
+    </div>
 
-<h2>Legal</h2>
-<ul>
-<li><a href="privacy.html">Privacy Policy</a></li>
-<li><a href="terms.html">Terms of Service</a></li>
-</ul>
+    <div class="hero-art" aria-hidden="true">
+      <div class="panel">
+        <div class="panel-title">Continue</div>
+        <div class="row">
+          <span class="chip">Book</span>
+          <div class="row-main"><strong>Project Hail Mary</strong><span>Page 248 of 476</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:52%"></div></div>
+        </div>
+        <div class="row">
+          <span class="chip">Show</span>
+          <div class="row-main"><strong>Severance</strong><span>Season 2, episode 4</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+        </div>
+        <div class="row">
+          <span class="chip">Audio</span>
+          <div class="row-main"><strong>Reading Dune</strong><span>1h 12m of 3h 5m</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:39%"></div></div>
+        </div>
+        <div class="panel-foot">
+          <span class="dot"></span> Where to watch: streaming, rent or buy
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Contact and feedback</h2>
-<p><a href="mailto:hello@talefare.com">hello@talefare.com</a></p>
+  <section class="kinds wrap" aria-label="What you can track">
+    <ul>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Books
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        Movies
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        Shows
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        Audio &amp; podcasts
+      </li>
+    </ul>
+  </section>
 
-<h2>Credits</h2>
-<ul>
-<li>This product uses the TMDB API but is not endorsed or certified by TMDB.</li>
-<li>Where-to-watch data is provided by Watchmode.</li>
-<li>Show data and artwork also come from TheTVDB. Book data comes from Open Library and Google Books. Audio data comes from Apple and Spotify.</li>
-</ul>
+  <section class="features wrap" id="features">
+    <h2>Made for people who enjoy more than one kind of story</h2>
+    <p class="section-lede">One library instead of a different app for every format.</p>
 
-<footer class="muted">&copy; Talefare</footer>
+    <div class="grid">
+      <article class="card">
+        <h3>One library</h3>
+        <p>Search for a movie, show, book, podcast or audiobook, add it, and give it a status: up next, in progress, completed or dropped.</p>
+      </article>
+      <article class="card">
+        <h3>Pick up where you left off</h3>
+        <p>Track progress the way each format works: pages for books, episodes for shows, minutes for audio. Rate and take notes as you go.</p>
+      </article>
+      <article class="card">
+        <h3>Know where to watch</h3>
+        <p>See which services stream a title, or where you can rent or buy it, without opening five apps.</p>
+      </article>
+      <article class="card">
+        <h3>Never miss a new episode</h3>
+        <p>Get a notification when a show you follow has a new episode, or when a title lands on a streaming service. You choose which alerts you get.</p>
+      </article>
+      <article class="card">
+        <h3>Find what to enjoy next</h3>
+        <p>Recommendations based on your own library, each with a short reason. Not sure what to pick tonight? Tell it your mood and it narrows the list.</p>
+      </article>
+      <article class="card">
+        <h3>See your taste</h3>
+        <p>Look back at what you finished, your favorite genres and creators, and a year in review.</p>
+      </article>
+      <article class="card">
+        <h3>Bring your lists with you</h3>
+        <p>Import from a spreadsheet, paste a list, or pick screenshots and let Talefare find the titles in them.</p>
+      </article>
+      <article class="card">
+        <h3>Phone and browser</h3>
+        <p>Your library lives on your device first, so it is quick and works offline. Sign in and it syncs between your phone and the web.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="private wrap" id="private">
+    <div class="private-inner">
+      <h2>Private by design</h2>
+      <ul class="ticks">
+        <li><strong>Your data stays yours.</strong> We don't sell your information, and the privacy policy spells out exactly what the app uses.</li>
+        <li><strong>AI is optional.</strong> Summaries and recommendation reasons can be spoiler-aware, and you can turn every AI feature off in settings.</li>
+        <li><strong>Delete everything in the app.</strong> Profile, then Data &amp; Privacy, then Delete Account removes your account and your synced library.</li>
+      </ul>
+      <p class="more"><a href="privacy.html">Read the full privacy policy</a></p>
+    </div>
+  </section>
+
+  <section class="closing wrap">
+    <h2>Be one of the first to try it</h2>
+    <p>Talefare is in private beta and still changing every week. Your feedback shapes what comes next.</p>
+    <div class="cta-row center">
+      <a class="btn" href="https://app.talefare.com">Open the web app</a>
+      <a class="btn btn-ghost" href="mailto:hello@talefare.com?subject=Talefare%20feedback">Send feedback</a>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="/" aria-label="Talefare home"><span>Talefare</span></a>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:hello@talefare.com">hello@talefare.com</a>
+      </nav>
+    </div>
+    <div class="credits">
+      <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+      <p>Where-to-watch data is provided by Watchmode.</p>
+      <p>Show data and artwork also come from TheTVDB. Book data comes from Open Library and Google Books. Audio data comes from Apple and Spotify.</p>
+    </div>
+    <p class="copy">&copy; Talefare</p>
+  </div>
+</footer>
+
 </body>
 </html>
